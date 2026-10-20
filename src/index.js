@@ -21,7 +21,7 @@ const { createExpressAdapter } = require("./adapters/express");
 const { fastifyDashboardPlugin } = require("./adapters/fastify");
 const { ApiClient, ApiError } = require("./ui/api-client");
 
-const VERSION = "0.1.0";
+const VERSION = "1.0.0";
 
 module.exports = {
   VERSION,

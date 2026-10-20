@@ -1,0 +1,28 @@
+# Tests and Testing Harness
+tests/
+coverage/
+*.lcov
+
+# Examples and Development Tools
+examples/
+
+# Documentation (available on GitHub repository)
+docs/
+
+# CI / CD and Repository Configuration
+.github/
+.git/
+.gitignore
+
+# Environment and Logs
+.env*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Tarballs and Temporary Files
+*.tgz
+scratch/
+.DS_Store
+Thumbs.db

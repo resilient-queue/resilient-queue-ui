@@ -169,7 +169,7 @@ function renderJobCompatibilityWarning(queueName) {
       </div>
       <div class="callout-body">
         Queue <code>${escapeHtml(queueName)}</code> does not implement the public <code>getJob(id)</code> API.
-        Published <code>@mayurbhusare/resilient-queue@2.0.2</code> does not expose individual job lookups; live job inspection requires an updated core release or a compatible queue provider.
+        Core library releases prior to <code>v2.2.0</code> (such as <code>v2.0.2</code>) do not expose individual job lookups; live job inspection requires <code>@mayurbhusare/resilient-queue@^2.2.0</code> or a compatible queue provider.
       </div>
     </div>
   `;

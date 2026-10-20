@@ -143,7 +143,7 @@ When initializing the adapter:
 | `400` | Bad Request | Parameter validation failed (e.g. negative `start`, non-integer `limit`, invalid `order`, empty `jobId`). |
 | `404` | Not Found | Requested `queueName` is not in the explicit registry, or `jobId` does not exist or has expired. |
 | `500` | Internal Server Error | Unhandled Redis command failure or pipeline execution error. |
-| `501` | Not Implemented | Core method (e.g. `getJob`) is not implemented by the installed `@mayurbhusare/resilient-queue` version. |
+| `501` | Not Implemented | Core method (e.g. `getJob`) is not implemented by legacy core releases (< v2.2.0). Upgrading to @mayurbhusare/resilient-queue@^2.2.0 activates live job lookups. |
 | `503` | Service Unavailable | Target `ResilientQueue` instance is closed (`queue.close()` was executed). |
 
 ### Closed Queue Detection Mechanism
@@ -540,6 +540,6 @@ The following limitations and open questions in the core library affect dashboar
    - *Impact*: Milestone 1 dashboard must rely on periodic polling of `getMetrics()` and `getDLQ()`. Real-time event streaming would require adding a Redis Pub/Sub layer in the core library.
 5. **No Queue Mutation Controls**:
    - `pause()`, `resume()`, `retryDLQJob()`, `retryAllDLQ()`, and `purgeDLQ()` are intentionally excluded from this read-only contract. A separate mutation contract will be created for Milestone 2.
-6. **No Historical Time-Series Metrics Persistence in Core v2.0.2**:
+6. **No Historical Time-Series Metrics Persistence in Core**:
    - `queue.getMetrics()` reports instantaneous point-in-time counts for `waiting`, `active`, `delayed`, and `dlq`. The core library does not aggregate, store, or expose time-series telemetry (such as throughput over time, processing latency percentiles, or failure rate trends).
    - *Impact*: Dashboard monitoring reflects instantaneous live state via polling. Storing ephemeral samples in browser memory does not constitute durable server-side history. Full historical trend analysis and durable telemetry require an external time-series datastore or server-side metric persistence layer, reserved as a future requirement.

@@ -1,6 +1,6 @@
 {
   "name": "@mayurbhusare/resilient-queue-ui",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Standalone administration dashboard and API adapter for @mayurbhusare/resilient-queue",
   "main": "src/index.js",
   "exports": {
@@ -49,9 +49,9 @@
     "test:e2e": "node --test tests/e2e/*.test.js"
   },
   "peerDependencies": {
-    "@mayurbhusare/resilient-queue": "^2.0.0"
+    "@mayurbhusare/resilient-queue": "^2.2.0"
   },
   "devDependencies": {
-    "@mayurbhusare/resilient-queue": "^2.0.0"
+    "@mayurbhusare/resilient-queue": "^2.2.0"
   }
 }

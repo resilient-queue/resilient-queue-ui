@@ -36,7 +36,7 @@ pnpm add @mayurbhusare/resilient-queue-ui @mayurbhusare/resilient-queue
 | Requirement | Supported Version Range |
 | :--- | :--- |
 | **Node.js** | `>=18.0.0` (LTS 18, 20, 22) |
-| [`@mayurbhusare/resilient-queue`](https://www.npmjs.com/package/@mayurbhusare/resilient-queue) | `^2.0.0` |
+| [`@mayurbhusare/resilient-queue`](https://www.npmjs.com/package/@mayurbhusare/resilient-queue) | `^2.2.0` |
 
 ---
 
@@ -143,10 +143,11 @@ const dlq = await client.getQueueDLQ("emails", { start: 0, limit: 25, order: "de
 const { job } = await client.getJob("emails", "job-123");
 ```
 
-### Core Compatibility Requirement
+### Core Compatibility & Version Support
 
 > [!NOTE]
-> The published `@mayurbhusare/resilient-queue@2.0.2` release does not expose the public `queue.getJob(jobId)` method. When paired with published `@mayurbhusare/resilient-queue@2.0.2`, the dashboard adapter returns `501 NOT_SUPPORTED` and the UI gracefully renders a clear compatibility disclosure notice without crashing. Full live job inspection automatically activates once an updated core release containing `getJob()` is installed.
+> - **Full Live Functionality (`>=2.2.0`)**: Real-time telemetry metrics, DLQ exploration, pause/resume detection, and deep job inspection via `queue.getJob(jobId)` are fully supported with [`@mayurbhusare/resilient-queue@>=2.2.0`](https://www.npmjs.com/package/@mayurbhusare/resilient-queue).
+> - **Legacy Compatibility (`<2.2.0`)**: If paired with an earlier core release lacking `getJob()` (such as `v2.0.2`), the dashboard adapter gracefully returns `501 NOT_SUPPORTED` and the UI renders a compatibility notice without crashing, while all other dashboard features (Overview telemetry, DLQ Explorer, and HTTP adapters) remain fully operational.
 
 ---
 

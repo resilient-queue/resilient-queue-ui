@@ -12,7 +12,7 @@ describe("Package Integrity & Subpath Exports Integration", () => {
 
   it("should declare valid package.json manifest and metadata", () => {
     assert.equal(pkg.name, "@mayurbhusare/resilient-queue-ui");
-    assert.equal(pkg.version, "0.1.0");
+    assert.equal(pkg.version, "1.0.0");
     assert.equal(pkg.type, "commonjs");
     assert.equal(pkg.main, "src/index.js");
     assert.equal(pkg.license, "MIT");
@@ -34,7 +34,7 @@ describe("Package Integrity & Subpath Exports Integration", () => {
     const rootModule = require("@mayurbhusare/resilient-queue-ui");
 
     assert.equal(typeof rootModule, "object");
-    assert.equal(rootModule.VERSION, "0.1.0");
+    assert.equal(rootModule.VERSION, "1.0.0");
 
     const expectedFunctions = [
       "createExpressAdapter",
